@@ -5,6 +5,8 @@ is never uploaded, stored, or transmitted.
 
 Built for people who document for a living: legal, field inspection, clinical notes.
 
+**→ [recount site](https://vdc-austin-ka.github.io/recount-site/)**
+
 ---
 
 ## Status: not yet released
@@ -37,9 +39,15 @@ has somewhere to look; releases will be published here when the software is read
 speech. The test set, the audio generator and the harness will ship with the source so the
 figure can be reproduced rather than taken on trust.
 
-Notably, a model 3.3× larger improved this by only 1.3 percentage points while costing
-3.8× the latency — and fixed *zero* homophone errors, because *principal* versus
-*principle* is resolved by meaning, not by acoustics.
+Two results from building it that changed the product:
+
+- A model **3.3× larger** improved this by only 1.3 percentage points while costing 3.8×
+  the latency — and fixed *zero* homophone errors, because *principal* versus *principle*
+  is resolved by meaning, not acoustics. That killed a planned cloud tier: no acoustic
+  model fixes those, so a bigger remote one would not either.
+- Domain dictionaries improve their own field by ~2pp and **damage others by about as
+  much** — the inspection vocabulary costs legal a full 2pp, cancelling its own gain. So
+  they are opt-in, and off by default. Always-on would have been worthless on average.
 
 ## Privacy
 
